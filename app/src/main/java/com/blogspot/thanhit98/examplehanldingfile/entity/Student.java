@@ -1,5 +1,6 @@
 package com.blogspot.thanhit98.examplehanldingfile.entity;
 
+
 public class Student {
     private String name;
     private String phone;

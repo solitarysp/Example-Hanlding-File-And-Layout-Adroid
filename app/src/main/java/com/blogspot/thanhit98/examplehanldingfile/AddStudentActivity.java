@@ -70,7 +70,6 @@ public class AddStudentActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
-            String jsonStudent = readData("DataStudent");
             // vì chúng ta k có class sử lý cho trang view nên việc sử lý vẫn sẽ ở class này
             // chúng ta chuyển layout
             setContentView(R.layout.activity_view_student);
@@ -78,6 +77,8 @@ public class AddStudentActivity extends AppCompatActivity {
             // lấy về 2 viewId ở layout view
             view_Student_Name = findViewById(R.id.view_Student_Name);
             view_Student_Phone = findViewById(R.id.view_Student_Phone);
+
+            String jsonStudent = readData("DataStudent");
 
             // tạo gson để conver từ json thành object
             Gson gson = new Gson();

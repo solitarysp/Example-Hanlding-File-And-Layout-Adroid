@@ -18,7 +18,7 @@ import java.io.InputStreamReader;
 
 public class MainActivity extends AppCompatActivity {
     // khai báo các biến sử dụng
-    Button btnSaveData, btnReadData,btnAddSutdent;
+    Button btnSaveData, btnReadData,btnAddSutdent,btnToSQLite;
     EditText editText;
 
     @Override
@@ -38,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
         //khai báo sự kiện btnAddSutdent khi click để chuyển sang layout khác
         btnAddSutdent=findViewById(R.id.btnAddStudent);
         btnAddSutdent.setOnClickListener(btnAddSutdentOnclick);
+
+        //khai báo sự kiện btnAddSutdent khi click để chuyển sang layout khác
+        btnToSQLite=findViewById(R.id.to_SQLite);
+        btnToSQLite.setOnClickListener(btnToSQLiteClick);
 
     }
     //tạo sự kiện save
@@ -139,6 +143,17 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View v) {
             //new mới class sử lý
             Intent i = new Intent(getBaseContext(), AddStudentActivity.class);
+            // set để hiển thị class sử lý
+            startActivity(i);
+        }
+    };
+
+    // sự kiển truyển sang layout mới
+    View.OnClickListener btnToSQLiteClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            //new mới class sử lý
+            Intent i = new Intent(getBaseContext(), SQLiteHandlerActivity.class);
             // set để hiển thị class sử lý
             startActivity(i);
         }
